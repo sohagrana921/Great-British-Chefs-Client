@@ -1,7 +1,6 @@
 import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
-import Banner from "./Banner";
 
 const Header = () => {
   return (
@@ -20,9 +19,16 @@ const Header = () => {
           </Link>
         </Navbar.Brand>
         <div className="flex md:order-2">
-          <Button gradientMonochrome="cyan" className="mr-5">
-            Cyan
-          </Button>
+          <Link to="/login">
+            <Button gradientMonochrome="cyan" className="mr-5">
+              Login
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button gradientMonochrome="cyan" className="mr-5">
+              Register
+            </Button>
+          </Link>
           <Avatar
             alt="User settings"
             img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
@@ -41,7 +47,6 @@ const Header = () => {
           </Link>
         </Navbar.Collapse>
       </Navbar>
-      <Banner></Banner>
     </div>
   );
 };
