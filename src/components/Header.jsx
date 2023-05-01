@@ -1,6 +1,7 @@
 import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
+import Banner from "./Banner";
 
 const Header = () => {
   return (
@@ -40,6 +41,7 @@ const Header = () => {
           </Link>
         </Navbar.Collapse>
       </Navbar>
+      <Banner></Banner>
     </div>
   );
 };
