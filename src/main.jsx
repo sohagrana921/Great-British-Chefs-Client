@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage";
 import About from "./components/About";
 import ChefRecipes from "./components/ChefRecipes";
+
 const router = createBrowserRouter([
   {
     path: "/",

@@ -2,6 +2,7 @@ import { Button, Card, Dropdown } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineArrowSmRight, HiThumbUp } from "react-icons/hi";
+
 const ChefsCards = ({ chef }) => {
   const {
     id,
