@@ -1,76 +1,100 @@
-import { Carousel } from "flowbite-react";
+import { Button, Carousel } from "flowbite-react";
 import React from "react";
 
 const Banner = () => {
   return (
     <div className="my-container h-96  xl:h-80 2xl:h-96 ">
       <Carousel>
-        <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white">
+        <div className="flex h-full items-center justify-center bg-pink-950 dark:bg-gray-700 dark:text-white">
           <div className="flex justify-between gap-10 p-10 items-center ">
             <div>
               <img
                 className="rounded-lg"
-                src="https://img.freepik.com/premium-photo/set-marinated-mushrooms-with-onions-spices-plate-rustic-background-top-view-banner_187166-26250.jpg"
+                src="https://i.ytimg.com/vi/sdeFDWFN47s/maxresdefault.jpg"
                 alt=""
               />
             </div>
             <div>
-              <h1 className="text-4xl font-bold  ">
-                Who Made the Best Blend? <br />
-                <span className="text-blue-500"> Vote Now!</span>
-              </h1>
-              <p className="py-2">
-                Five Allrecipes Allstars created their best original recipe
-                featuring mushrooms and ground meat-and now we need to pick the
-                winner. Cast your vote, and you could win $1,000!
+              <p>
+                <img
+                  className="font-extrabold"
+                  src="https://media-cdn2.greatbritishchefs.com/media/t15pcz3v/img48591.png"
+                  alt=""
+                />
               </p>
-              <button className="btn mt-2 ">Vote</button>
+
+              <p className="py-2 text-white font-semibold">
+                Inspiring food lovers everywhere
+              </p>
+              <div className="text-right text-white mr-10 mt-10">
+                <p>
+                  This week on <br /> Great British Chefs
+                </p>
+
+                <button className="banner-btn mt-4">See Best Recipes</button>
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white">
+        <div className="flex h-full items-center justify-center bg-pink-950 dark:bg-gray-700 dark:text-white">
           <div className="flex justify-between gap-10 p-10 items-center ">
             <div>
               <img
                 className="rounded-lg"
-                src="https://img.freepik.com/premium-photo/set-marinated-mushrooms-with-onions-spices-plate-rustic-background-top-view-banner_187166-26250.jpg"
+                src="https://i.ytimg.com/vi/sdeFDWFN47s/maxresdefault.jpg"
                 alt=""
               />
             </div>
             <div>
-              <h1 className="text-4xl font-bold  ">
-                Who Made the Best Blend? <br />
-                <span className="text-blue-500"> Vote Now!</span>
-              </h1>
-              <p className="py-2">
-                Five Allrecipes Allstars created their best original recipe
-                featuring mushrooms and ground meat-and now we need to pick the
-                winner. Cast your vote, and you could win $1,000!
+              <p>
+                <img
+                  className="font-extrabold"
+                  src="https://media-cdn2.greatbritishchefs.com/media/t15pcz3v/img48591.png"
+                  alt=""
+                />
               </p>
-              <button className="btn mt-2 ">Vote</button>
+
+              <p className="py-2 text-white font-semibold">
+                Inspiring food lovers everywhere
+              </p>
+              <div className="text-right text-white mr-10 mt-10">
+                <p>
+                  This week on <br /> Great British Chefs
+                </p>
+
+                <button className="banner-btn mt-4">See Best Recipes</button>
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white">
+        <div className="flex h-full items-center justify-center bg-pink-950 dark:bg-gray-700 dark:text-white">
           <div className="flex justify-between gap-10 p-10 items-center ">
             <div>
               <img
                 className="rounded-lg"
-                src="https://img.freepik.com/premium-photo/set-marinated-mushrooms-with-onions-spices-plate-rustic-background-top-view-banner_187166-26250.jpg"
+                src="https://i.ytimg.com/vi/sdeFDWFN47s/maxresdefault.jpg"
                 alt=""
               />
             </div>
             <div>
-              <h1 className="text-4xl font-bold  ">
-                Who Made the Best Blend? <br />
-                <span className="text-blue-500"> Vote Now!</span>
-              </h1>
-              <p className="py-2">
-                Five Allrecipes Allstars created their best original recipe
-                featuring mushrooms and ground meat-and now we need to pick the
-                winner. Cast your vote, and you could win $1,000!
+              <p>
+                <img
+                  className="font-extrabold"
+                  src="https://media-cdn2.greatbritishchefs.com/media/t15pcz3v/img48591.png"
+                  alt=""
+                />
               </p>
-              <button className="btn mt-2 ">Vote</button>
+
+              <p className="py-2 text-white font-semibold">
+                Inspiring food lovers everywhere
+              </p>
+              <div className="text-right text-white mr-10 mt-10">
+                <p>
+                  This week on <br /> Great British Chefs
+                </p>
+
+                <button className="banner-btn mt-4">See Best Recipes</button>
+              </div>
             </div>
           </div>
         </div>

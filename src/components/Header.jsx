@@ -1,23 +1,18 @@
 import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="my-container">
       <Navbar fluid={true} rounded={true}>
-        <Navbar.Brand href="https://flowbite.com/">
+        <Link to="/">
           <img
-            src="https://cdn-icons-png.flaticon.com/128/1980/1980654.png"
-            className="mr-3 h-6 sm:h-9"
-            alt="Flowbite Logo"
+            src="https://media-cdn2.greatbritishchefs.com/media/kxtop14a/gbc_logo1.svg"
+            className="mr-3 h-6 sm:h-9 font-bold"
+            alt=""
           />
-          <Link to="/">
-            <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-              Cooking Canvas
-            </span>
-          </Link>
-        </Navbar.Brand>
+        </Link>
         <div className="flex md:order-2">
           <Link to="/login">
             <Button gradientMonochrome="cyan" className="mr-5">
@@ -38,13 +33,30 @@ const Header = () => {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Link to="/">
-            <Navbar.Link active={true}>Home</Navbar.Link>
-          </Link>
-          <Navbar.Link>About</Navbar.Link>
-          <Link to="/blog">
-            <Navbar.Link>Blog</Navbar.Link>
-          </Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-blue-600 font-bold" : "font-bold"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "text-blue-600 font-bold " : "font-bold"
+            }
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) =>
+              isActive ? "text-blue-600 font-bold" : "font-bold"
+            }
+          >
+            Blog
+          </NavLink>
         </Navbar.Collapse>
       </Navbar>
     </div>
