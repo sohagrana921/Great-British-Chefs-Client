@@ -41,14 +41,7 @@ const Header = () => {
           >
             Home
           </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "text-blue-600 font-bold " : "font-bold"
-            }
-          >
-            About
-          </NavLink>
+
           <NavLink
             to="/blog"
             className={({ isActive }) =>
@@ -56,6 +49,14 @@ const Header = () => {
             }
           >
             Blog
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "text-blue-600 font-bold" : "font-bold"
+            }
+          >
+            About
           </NavLink>
         </Navbar.Collapse>
       </Navbar>

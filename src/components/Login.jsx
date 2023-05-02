@@ -1,46 +1,65 @@
 import { Button, Label, TextInput } from "flowbite-react";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../providers/AuthProvider";
+
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
       <div className="mx-auto w-1/3 mt-4 mb-8">
         <h1 className="text-center text-2xl font-bold my-4">Please Login</h1>
-        <form className="flex flex-col gap-4">
+      </div>
+      <div className="mx-auto w-1/3">
+        <form onSubmit={handleLogin}>
           <div>
-            <div className="mb-2 block">
-              <Label value="Your email" />
-            </div>
-            <TextInput
-              id="email2"
-              type="email"
+            <p className="my-1 font-semibold">Email</p>
+            <input
+              className="md:w-96 rounded-lg bg-slate-50"
               placeholder="Enter Your Email"
-              required={true}
-              shadow={true}
+              type="email"
+              name="email"
             />
           </div>
           <div>
-            <div className="mb-2 block">
-              <Label value="Your password" />
-            </div>
-            <TextInput
-              id="password2"
-              type="password"
+            <p className="my-1 font-semibold">Password</p>
+            <input
+              className="md:w-96 rounded-lg bg-slate-50"
               placeholder="Enter Your Password"
-              required={true}
-              shadow={true}
+              type="password"
+              name="password"
             />
           </div>
-
-          <Button type="submit">Login</Button>
-          <p className="text-secondary">
-            Don't Have an Account?{" "}
-            <span className="text-blue-600">
-              <Link to="/register">Register</Link>
-            </span>
-          </p>
+          <Button className="mt-6 w-full" type="submit">
+            Submit
+          </Button>
         </form>
+        <p>
+          <small>
+            New to Great British Chef?
+            <Link className="text-blue-700 font-bold" to="/register">
+              Register
+            </Link>
+          </small>
+        </p>
       </div>
       <div className="border-blue-700 border-solid border rounded pt-2 pb-4 mt-4 mb-20 w-2/5 mx-auto">
         <p className="text-center my-2 text-lg font-semibold text-blue-700">

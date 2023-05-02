@@ -9,8 +9,9 @@ import Register from "./components/Register.jsx";
 import MainLayout from "./layout/MainLayout.jsx";
 import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage";
-import About from "./components/About";
+
 import ChefRecipes from "./components/ChefRecipes";
+import AboutUS from "./components/AboutUS";
 
 const router = createBrowserRouter([
   {
@@ -36,8 +37,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About></About>,
+        element: <AboutUS></AboutUS>,
       },
+
       {
         path: "/chefrecipes/:id",
         element: <ChefRecipes></ChefRecipes>,
