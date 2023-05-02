@@ -1,8 +1,9 @@
 import { Card } from "flowbite-react";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { HiThumbUp } from "react-icons/hi";
 import { useLoaderData, useParams } from "react-router-dom";
-import RecipesCards from "./RecipesCards";
+
+import Recipes from "./Recipes";
 
 const ChefRecipes = () => {
   const data = useParams();
@@ -10,6 +11,7 @@ const ChefRecipes = () => {
   const filterData = chefs.find((p) => p.id == data.id);
 
   const {
+    id,
     chef_picture,
     chef_name,
     bio,
@@ -18,14 +20,6 @@ const ChefRecipes = () => {
     num_recipes,
   } = filterData;
 
-  const [recipes, setRecipes] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:4000/recipes")
-      .then((res) => res.json())
-      .then((data) => setRecipes(data))
-      .catch((error) => console.error(error));
-  }, []);
-  //   console.log(recipes);
   return (
     <div className="mx-auto my-container">
       <Card>
@@ -61,10 +55,8 @@ const ChefRecipes = () => {
       <h1 className="text-4xl text-center font-bold my-16 text-blue-800">
         Chef's recipes
       </h1>
-      <div className="md:grid grid-cols-3  my-20 gap-4">
-        {recipes.map((recipe) => (
-          <RecipesCards key={recipe.recipe_id} recipe={recipe}></RecipesCards>
-        ))}
+      <div>
+        <Recipes id={data.id}></Recipes>
       </div>
     </div>
   );

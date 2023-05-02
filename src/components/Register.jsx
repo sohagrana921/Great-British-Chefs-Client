@@ -1,69 +1,47 @@
-import { Button, Label, TextInput } from "flowbite-react";
+import { Button, Card, Checkbox, Label, TextInput } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, email, password);
+  };
   return (
     <div className="mx-auto w-1/3 mt-4 mb-10">
       <h1 className="text-center text-2xl font-bold my-4">Please Register</h1>
-      <form className="flex flex-col gap-4">
-        <div>
-          <div className="mb-2 block">
-            <Label value="Your Name" />
+      <div>
+        <form onSubmit={handleRegister}>
+          <div>
+            <p className="text-xl">Name</p>
+            <input placeholder="Enter Your Name" type="text" name="name" />
           </div>
-          <TextInput
-            id="name"
-            type="text"
-            placeholder="Enter Your Name"
-            required={true}
-            shadow={true}
-          />
-        </div>
-        <div>
-          <div className="mb-2 block">
-            <Label value="Your email" />
+          <div>
+            <p>Email</p>
+            <input placeholder="Enter Your Email" type="email" name="email" />
           </div>
-          <TextInput
-            id="email2"
-            type="email"
-            placeholder="Enter Your Email"
-            required={true}
-            shadow={true}
-          />
-        </div>
-        <div>
-          <div className="mb-2 block">
-            <Label value="Your password" />
+          <div>
+            <p>Password</p>
+            <input
+              placeholder="Enter Your Password"
+              type="password"
+              name="password"
+            />
           </div>
-          <TextInput
-            id="password2"
-            type="password"
-            placeholder="Enter Your Password"
-            required={true}
-            shadow={true}
-          />
-        </div>
-        <div>
-          <div className="mb-2 block">
-            <Label value="Photo URL" />
-          </div>
-          <TextInput
-            id="name"
-            type="text"
-            placeholder="Enter Your Photo URL"
-            required={true}
-            shadow={true}
-          />
-        </div>
+          <Button type="submit">Submit</Button>
+        </form>
 
-        <Button type="submit">Register Now</Button>
-        <p className="text-secondary">
-          Already Have an Account?{" "}
-          <span className="text-blue-600">
-            <Link to="/login">Login</Link>
-          </span>
+        <p>
+          <small>
+            Already have an account? <Link to="/login">Login</Link>
+          </small>
         </p>
-      </form>
+        <p className="text-error"></p>
+      </div>
     </div>
   );
 };

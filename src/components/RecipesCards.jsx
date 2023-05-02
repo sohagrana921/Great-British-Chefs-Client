@@ -1,5 +1,4 @@
-import { Button, Card, Toast } from "flowbite-react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import {
   FaEye,
@@ -12,62 +11,67 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import { HiCheck } from "react-icons/hi";
 import Rating from "react-rating";
-const RecipesCards = ({ recipe }) => {
+import { Button, Card } from "flowbite-react";
+const RecipesCards = ({ chefSpecial }) => {
+  const { recipe_name, ingredients, cooking_method, rating, recipe_picture } =
+    chefSpecial;
   const [favorite, setFavorite] = useState(false);
-  const { name, pic, ingredients, cookingMethod, rating, recipe_id } = recipe;
+
   const handleFavoriteRecipe = () => {
     setFavorite(true);
     toast.success("The recipe added in your favorite");
   };
-
   return (
-    <div className="max-w-sm">
-      <Card imgSrc={pic}>
-        <a href="#">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            {name}
-          </h5>
-        </a>
-        <p>
-          <span className="text-xl font-bold">Ingredients:</span>
-          {ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </p>
-        <p>
-          <span className="text-lg font-bold"> Cooking Method : </span>
-          <small>{cookingMethod}</small>
-        </p>
+    <div>
+      <div className="max-w-sm">
+        <Card>
+          <img className="h-52" src={recipe_picture} alt="" />
+          <a href="#">
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              {recipe_name}
+            </h5>
+          </a>
+          <p>
+            <span className="text-xl font-bold">Ingredients:</span>
+            {ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </p>
+          <p>
+            <span className="text-lg font-bold"> Cooking Method : </span>
+            <small>{`${cooking_method.slice(0, 100)}.`}</small>
+          </p>
 
-        <div className="flex items-center gap-2">
-          <div>
-            <Rating
-              placeholderRating={rating}
-              readonly
-              emptySymbol={<FaRegStar></FaRegStar>}
-              placeholderSymbol={<FaStar className="text-warning"></FaStar>}
-              fullSymbol={<FaStar></FaStar>}
-            ></Rating>
-            <span> {rating}</span>
-          </div>
-          <div
-            className="
-          "
-          >
-            <Button
-              onClick={handleFavoriteRecipe}
-              disabled={favorite}
-              outline={true}
-              pill={true}
+          <div className="flex items-center gap-2">
+            <div>
+              <Rating
+                placeholderRating={rating}
+                readonly
+                emptySymbol={<FaRegStar></FaRegStar>}
+                placeholderSymbol={<FaStar className="text-warning"></FaStar>}
+                fullSymbol={<FaStar></FaStar>}
+              ></Rating>
+              <span> {rating}</span>
+            </div>
+            <div
+              className="
+      "
             >
-              <span className="text-lg font-bold ">Favorite</span>
-              <FaHeart className="h-6 w-6 text-red-600 ml-2" />
-            </Button>
-            <Toaster />
+              <Button
+                onClick={handleFavoriteRecipe}
+                disabled={favorite}
+                outline={true}
+                pill={true}
+              >
+                <span className=" font-bold mr-1 ">Favorite</span>
+                <FaHeart className="h-5 w-5 text-red-600 " />
+              </Button>
+              <Toaster />
+            </div>
+            <div></div>
           </div>
-          <div></div>
-        </div>
-      </Card>
+        </Card>
+      </div>
     </div>
   );
 };
