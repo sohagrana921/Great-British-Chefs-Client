@@ -4,28 +4,6 @@ import React from "react";
 const AboutUS = () => {
   return (
     <div>
-      <div className="flex h-full items-center justify-center my-container dark:bg-gray-700 dark:text-white">
-        <div className="flex justify-between gap-10 p-10 items-center ">
-          <div>
-            <h1 className="text-4xl font-bold">
-              Inspiring food lovers everywhere
-            </h1>
-            <p className="py-2  font-semibold">
-              Great British Chefs is the team behind the fastest growing food
-              websites in the UK Both sites are go-to destinations for foodies
-              in search of recipe inspiration, cooking guides and in-depth
-              features on the world of food, drink, cooking and chefs.
-            </p>
-          </div>
-          <div>
-            <img
-              className="rounded-lg "
-              src="https://media-cdn2.greatbritishchefs.com/media/xfwndv3c/about-us-header.whqc_1423x711q90.webp"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
       <div className="flex gap-5 my-container">
         <div>
           <h1 className="text-3xl font-semibold text-center my-3">

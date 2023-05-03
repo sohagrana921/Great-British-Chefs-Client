@@ -6,8 +6,8 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  console.log(location);
+  // const location = useLocation();
+  // console.log(location);
   const from = location.state?.from?.pathname || "/";
   const [error, setError] = useState("");
   const { signIn, signInWithGoogle, handleGithubSignIn } =
@@ -23,7 +23,7 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         form.reset();
-        navigate("/chefrecipes");
+        navigate("/chefrecipes/:id");
       })
       .catch((error) => {
         setError(error.message);

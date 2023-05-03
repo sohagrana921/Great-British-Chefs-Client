@@ -2,14 +2,14 @@ import React from "react";
 import Banner from "./Banner";
 
 import Chefs from "./Chefs";
-import MissionsOfUs from "./MissionsOfUs";
+import NewestRecipes from "./NewestRecipes";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
       <Chefs></Chefs>
-      <MissionsOfUs></MissionsOfUs>
+      <NewestRecipes></NewestRecipes>
     </div>
   );
 };

@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA8CgNyHu_HCD-YGOUHd01ppVBHGx8fCKs",
-  authDomain: "cooking-canvas-16c81.firebaseapp.com",
-  projectId: "cooking-canvas-16c81",
-  storageBucket: "cooking-canvas-16c81.appspot.com",
-  messagingSenderId: "785045475661",
-  appId: "1:785045475661:web:5432ac6ae826a7d7fa2704",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

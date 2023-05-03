@@ -7,7 +7,7 @@ import { Toaster, toast } from "react-hot-toast";
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const navaigate = useNavigate();
+  const navigate = useNavigate();
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -32,7 +32,7 @@ const Register = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navaigate("/login");
+        navigate("/login");
         toast.success("User Successfully Created");
         form.reset();
       })
