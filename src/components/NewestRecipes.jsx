@@ -1,4 +1,4 @@
-import { Button, Card } from "flowbite-react";
+import { Button, Card, Modal } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
@@ -6,11 +6,11 @@ import Rating from "react-rating";
 const NewestRecipes = () => {
   const [latest, setLatest] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/newestrecipes/")
+    fetch("https://assignment-10-server-sohagrana921.vercel.app/newestrecipes/")
       .then((res) => res.json())
       .then((data) => setLatest(data));
   }, []);
-  console.log(latest);
+
   return (
     <div>
       <div className="flex h-full items-center justify-center my-container dark:bg-gray-700 dark:text-white">
@@ -60,6 +60,7 @@ const NewestRecipes = () => {
               ></Rating>
               <span> {singleRecipe.rating}</span>
             </div>
+
             <Button gradientMonochrome="cyan" className="mr-5">
               Details
             </Button>

@@ -42,7 +42,7 @@ const ChefsCards = ({ chef }) => {
               </span>
             </div>
             <div className="mt-4  space-x-3 lg:mt-6"></div>
-            <Link to={`/chefrecipes/${id}`}>
+            <Link to={`/recipes/${id}`}>
               <Button outline={true}>
                 View Recipes
                 <HiOutlineArrowSmRight className="h-6 w-6" />

@@ -4,7 +4,7 @@ import RecipesCards from "./RecipesCards";
 const Recipes = ({ id }) => {
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/recipes")
+    fetch("https://assignment-10-server-sohagrana921.vercel.app/recipes")
       .then((res) => res.json())
       .then((data) => setRecipes(data))
       .catch((error) => console.error(error));
