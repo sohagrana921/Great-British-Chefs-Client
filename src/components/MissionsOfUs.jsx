@@ -4,7 +4,7 @@ import React from "react";
 const MissionsOfUs = () => {
   return (
     <div>
-      <div className="flex h-full items-center justify-center my-container dark:bg-gray-700 dark:text-white">
+      <div className="md:flex h-full items-center justify-center my-container dark:bg-gray-700 dark:text-white">
         <div className="flex justify-between gap-10 p-10 items-center ">
           <div>
             <h1 className="text-4xl font-bold">
@@ -26,7 +26,7 @@ const MissionsOfUs = () => {
           </div>
         </div>
       </div>
-      <div className="flex gap-5 my-container">
+      <div className="md:flex gap-5 my-container">
         <div>
           <h1 className="text-3xl font-semibold text-center my-3">
             Who we are

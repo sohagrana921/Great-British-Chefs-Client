@@ -53,7 +53,7 @@ const ChefRecipes = () => {
         </div>
       </Card>
       <h1 className="text-4xl text-center font-bold my-16 text-blue-800">
-        Chef's recipes
+        {`${chef_name} Recipes`}
       </h1>
       <div>
         <Recipes id={data.id}></Recipes>

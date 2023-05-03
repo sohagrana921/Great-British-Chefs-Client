@@ -4,11 +4,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../providers/AuthProvider";
 
-// const navigate = useNavigate();
-// const location = useLocation();
-
-// const from = location.state?.from?.pathname || "/";
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+  const from = location.state?.from?.pathname || "/";
   const [error, setError] = useState("");
   const { signIn, signInWithGoogle, handleGithubSignIn } =
     useContext(AuthContext);
@@ -23,7 +23,7 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         form.reset();
-        // navigate(from, { replace: true });
+        navigate("/chefrecipes");
       })
       .catch((error) => {
         setError(error.message);
