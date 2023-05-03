@@ -1,11 +1,17 @@
-import { Button, Label, TextInput } from "flowbite-react";
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Button } from "flowbite-react";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../providers/AuthProvider";
 
+// const navigate = useNavigate();
+// const location = useLocation();
+
+// const from = location.state?.from?.pathname || "/";
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const { signIn, signInWithGoogle, handleGithubSignIn } =
+    useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -17,16 +23,32 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         form.reset();
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
+      });
+  };
+  const handleGoogleLogIn = () => {
+    signInWithGoogle().then((result) => {
+      const user = result.user;
+      console.log(user.photoURL);
+    });
+  };
+  const handleGithub = () => {
+    handleGithubSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+      })
+      .catch((error) => {
+        setError(error.message);
       });
   };
   return (
     <div>
       <div className="mx-auto w-1/3 mt-4 mb-8">
         <h1 className="text-center text-2xl font-bold my-4">Please Login</h1>
+        <p className="text-error">{error}</p>
       </div>
       <div className="mx-auto w-1/3">
         <form onSubmit={handleLogin}>
@@ -68,7 +90,11 @@ const Login = () => {
         <div className="d-flex justify-center">
           <div className="flex justify-center items-center gap-2">
             <div>
-              <Button outline={true} gradientDuoTone="redToYellow">
+              <Button
+                onClick={handleGoogleLogIn}
+                outline={true}
+                gradientDuoTone="redToYellow"
+              >
                 <span className="text-blue-500 flex items-center">
                   <FaGoogle className="mr-2 h-3 w-3 "></FaGoogle>
                   Login with Google
@@ -76,7 +102,11 @@ const Login = () => {
               </Button>
             </div>
             <div>
-              <Button outline={true} gradientDuoTone="redToYellow">
+              <Button
+                onClick={handleGithub}
+                outline={true}
+                gradientDuoTone="redToYellow"
+              >
                 <span className="text-blue-500 flex items-center">
                   <FaGithub className="mr-2 h-3 w-3 "></FaGithub>
                   Login with Github

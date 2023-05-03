@@ -1,15 +1,16 @@
 import { Button } from "flowbite-react";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
-
-  const handleRegister = (e) => {
-    e.preventDefault();
-    const form = e.target;
+  const navaigate = useNavigate();
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
@@ -27,15 +28,18 @@ const Register = () => {
       return;
     }
 
-    // createUser(email, password)
-    //   .then((result) => {
-    //     const loggedUser = result.user;
-    //     console.log(loggedUser);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //     setError(error.message);
-    //   });
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navaigate("/login");
+        toast.success("User Successfully Created");
+        form.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
   };
   return (
     <div className="mx-auto w-1/3 mt-4 mb-10">
@@ -92,6 +96,7 @@ const Register = () => {
           <Button className="mt-6 w-full" type="submit">
             Submit
           </Button>
+          <Toaster />
         </form>
 
         <p>

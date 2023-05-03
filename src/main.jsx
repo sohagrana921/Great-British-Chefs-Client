@@ -12,6 +12,7 @@ import ErrorPage from "./components/ErrorPage";
 
 import ChefRecipes from "./components/ChefRecipes";
 import AboutUS from "./components/AboutUS";
+import AuthProvider from "./providers/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -49,5 +50,7 @@ const router = createBrowserRouter([
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router}></RouterProvider>
+  <AuthProvider>
+    <RouterProvider router={router}></RouterProvider>
+  </AuthProvider>
 );

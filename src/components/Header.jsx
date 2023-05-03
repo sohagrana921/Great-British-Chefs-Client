@@ -1,8 +1,14 @@
-import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
-import React from "react";
+import { Avatar, Button, Dropdown, Navbar, Tooltip } from "flowbite-react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut();
+  };
   return (
     <div className="my-container">
       <Navbar fluid={true} rounded={true}>
@@ -14,21 +20,28 @@ const Header = () => {
           />
         </Link>
         <div className="flex md:order-2">
-          <Link to="/login">
-            <Button gradientMonochrome="cyan" className="mr-5">
-              Login
-            </Button>
-          </Link>
-          <Link to="/register">
-            <Button gradientMonochrome="cyan" className="mr-5">
-              Register
-            </Button>
-          </Link>
-          <Avatar
-            alt="User settings"
-            img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-            rounded={true}
-          />
+          {user ? (
+            <div className="flex">
+              <Link onClick={handleLogOut} to="/login">
+                <Button gradientMonochrome="cyan" className="mr-5">
+                  Logout
+                </Button>
+              </Link>
+              <Tooltip content={user.displayName}>
+                <Avatar
+                  alt="User settings"
+                  img={user.photoURL}
+                  rounded={true}
+                />
+              </Tooltip>
+            </div>
+          ) : (
+            <Link to="/login">
+              <Button gradientMonochrome="cyan" className="mr-5">
+                Login
+              </Button>
+            </Link>
+          )}
 
           <Navbar.Toggle />
         </div>
