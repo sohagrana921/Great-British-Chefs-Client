@@ -1,6 +1,5 @@
-import { Button, Carousel } from "flowbite-react";
+import { Carousel } from "flowbite-react";
 import React from "react";
-
 const Banner = () => {
   return (
     <div className="my-container h-96  xl:h-80 2xl:h-96 ">

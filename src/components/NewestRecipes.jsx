@@ -2,6 +2,7 @@ import { Button, Card, Modal } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import RecipesCollection from "./RecipesCollection";
 
 const NewestRecipes = () => {
   const [latest, setLatest] = useState([]);
@@ -14,7 +15,7 @@ const NewestRecipes = () => {
   return (
     <div>
       <div className="flex h-full items-center justify-center my-container dark:bg-gray-700 dark:text-white">
-        <div className="flex justify-between gap-10 p-10 items-center ">
+        <div className="md:flex justify-between gap-10 p-10 items-center ">
           <div>
             <h1 className="text-4xl font-bold">
               Inspiring food lovers everywhere
@@ -38,7 +39,7 @@ const NewestRecipes = () => {
       <h1 className="text-4xl text-blue-700 font-bold text-center my-10">
         Newest Recipes
       </h1>
-      <div className="grid grid-cols-3 gap-5 my-container">
+      <div className="md:grid grid-cols-3 gap-5 my-container">
         {latest.map((singleRecipe) => (
           <Card key={singleRecipe.id}>
             <img className="h-80" src={singleRecipe.recipe_picture} alt="" />
@@ -60,13 +61,10 @@ const NewestRecipes = () => {
               ></Rating>
               <span> {singleRecipe.rating}</span>
             </div>
-
-            <Button gradientMonochrome="cyan" className="mr-5">
-              Details
-            </Button>
           </Card>
         ))}
       </div>
+      <RecipesCollection></RecipesCollection>
     </div>
   );
 };

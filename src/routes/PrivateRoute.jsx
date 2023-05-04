@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
-import { Progress } from "flowbite-react";
+import { Spinner } from "flowbite-react";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
   if (loading) {
-    return <Progress progress={45} size="lg" color="dark" />;
+    return (
+      <div className="text-center">
+        <Spinner aria-label="Center-aligned spinner example" />
+      </div>
+    );
   }
 
   if (user) {

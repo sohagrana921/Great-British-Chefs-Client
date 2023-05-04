@@ -4,6 +4,9 @@ import React from "react";
 const AboutUS = () => {
   return (
     <div>
+      <h1 className="text-center mx-auto rounded text-white text-4xl my-5 py-3 px-5 bg-blue-600 w-3/5 font-bold ">
+        Our Mission and Vision
+      </h1>
       <div className="flex gap-5 my-container">
         <div>
           <h1 className="text-3xl font-semibold text-center my-3">

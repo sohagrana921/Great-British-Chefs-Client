@@ -1,8 +1,14 @@
+import { Button } from "flowbite-react";
 import React from "react";
+import { HiOutlineArrowRight } from "react-icons/hi";
 
 const Blog = () => {
   return (
-    <div className="my-container  border-2">
+    <div className="my-container  border">
+      <Button pill={true}>
+        <HiOutlineArrowRight className="h-6 w-6" />
+      </Button>
+
       <h1 className="text-center text-4xl font-bold">Answer Some Question:-</h1>
       <div className=" mt-12 p-10">
         <h3 className="text-2xl font-bold">
