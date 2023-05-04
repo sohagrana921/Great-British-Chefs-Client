@@ -1,5 +1,6 @@
 import { Carousel } from "flowbite-react";
 import React from "react";
+import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div className="my-container h-96  xl:h-80 2xl:h-96 ">
@@ -30,7 +31,9 @@ const Banner = () => {
                   This week on <br /> Great British Chefs
                 </p>
 
-                <button className="banner-btn mt-4">See Best Recipes</button>
+                <Link to="/bestRecipes">
+                  <button className="banner-btn mt-4">See Best Recipes</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -39,8 +42,8 @@ const Banner = () => {
           <div className="flex justify-between gap-10 p-10 items-center ">
             <div>
               <img
-                className="rounded-lg"
-                src="https://i.ytimg.com/vi/sdeFDWFN47s/maxresdefault.jpg"
+                className="rounded-lg "
+                src="https://img.freepik.com/free-photo/portrait-smiling-chef-uniform_329181-675.jpg"
                 alt=""
               />
             </div>
@@ -61,7 +64,9 @@ const Banner = () => {
                   This week on <br /> Great British Chefs
                 </p>
 
-                <button className="banner-btn mt-4">See Best Recipes</button>
+                <Link to="/bestRecipes">
+                  <button className="banner-btn mt-4">See Best Recipes</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -71,7 +76,7 @@ const Banner = () => {
             <div>
               <img
                 className="rounded-lg"
-                src="https://i.ytimg.com/vi/sdeFDWFN47s/maxresdefault.jpg"
+                src="https://global-uploads.webflow.com/5f0082d019150187c1bdb9ca/63d0f6d18842ecf4ddb10ba3_chef%20adalah%20(1).webp"
                 alt=""
               />
             </div>
@@ -91,8 +96,9 @@ const Banner = () => {
                 <p>
                   This week on <br /> Great British Chefs
                 </p>
-
-                <button className="banner-btn mt-4">See Best Recipes</button>
+                <Link to="/bestRecipes">
+                  <button className="banner-btn mt-4">See Best Recipes</button>
+                </Link>
               </div>
             </div>
           </div>

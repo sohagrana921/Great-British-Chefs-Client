@@ -21,7 +21,7 @@ const ChefsCards = ({ chef }) => {
           <div className="flex flex-col rounded-lg items-center pb-10 bg-pink-950 ">
             <LazyLoad>
               <img
-                className="mb-3 h-36 rounded w-52 shadow pt-6"
+                className="mb-3 h-40 rounded w-52 shadow pt-6"
                 src={chef_picture}
                 alt="Bonnie image"
               />

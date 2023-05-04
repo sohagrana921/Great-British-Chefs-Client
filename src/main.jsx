@@ -14,6 +14,7 @@ import ChefRecipes from "./components/ChefRecipes";
 import AboutUS from "./components/AboutUS";
 import AuthProvider from "./providers/AuthProvider";
 import PrivateRoute from "./routes/PrivateRoute";
+import BestRecipies from "./components/BestRecipies";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUS></AboutUS>,
+      },
+      {
+        path: "/bestRecipes",
+        element: <BestRecipies></BestRecipies>,
       },
 
       {

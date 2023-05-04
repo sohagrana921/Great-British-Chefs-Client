@@ -42,7 +42,7 @@ const NewestRecipes = () => {
       <div className="md:grid grid-cols-3 gap-5 my-container">
         {latest.map((singleRecipe) => (
           <Card key={singleRecipe.id}>
-            <img className="h-80" src={singleRecipe.recipe_picture} alt="" />
+            <img className="h-60" src={singleRecipe.recipe_picture} alt="" />
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {singleRecipe.recipe_name}
             </h5>

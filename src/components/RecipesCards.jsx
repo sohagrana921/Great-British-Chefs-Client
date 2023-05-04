@@ -12,6 +12,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { HiCheck } from "react-icons/hi";
 import Rating from "react-rating";
 import { Button, Card } from "flowbite-react";
+
 const RecipesCards = ({ chefSpecial }) => {
   const { recipe_name, ingredients, cooking_method, rating, recipe_picture } =
     chefSpecial;
