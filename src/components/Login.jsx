@@ -6,9 +6,7 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
   const navigate = useNavigate();
-  const location = useLocation();
 
-  const from = location.state?.from?.pathname || "/";
   const [error, setError] = useState("");
   const { signIn, signInWithGoogle, handleGithubSignIn } =
     useContext(AuthContext);
@@ -17,7 +15,7 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
@@ -50,7 +48,7 @@ const Login = () => {
   };
   return (
     <div>
-      <div className="mx-auto w-1/3 mt-4 mb-8">
+      <div className="mx-auto md:w-1/3 mt-4 mb-8">
         <h1 className="text-center text-2xl font-bold my-4">Please Login</h1>
         <p className="text-error">{error}</p>
       </div>
@@ -87,7 +85,7 @@ const Login = () => {
           </small>
         </p>
       </div>
-      <div className="border-blue-700 border-solid border rounded pt-2 pb-4 mt-4 mb-20 w-2/5 mx-auto">
+      <div className="border-blue-700 border-solid border rounded pt-2 pb-4 mt-4 mb-20 md:w-2/5 mx-auto">
         <p className="text-center my-2 text-lg font-semibold text-blue-700">
           Or Login With
         </p>

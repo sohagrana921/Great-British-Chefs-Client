@@ -1,15 +1,31 @@
 import { Button } from "flowbite-react";
-import React from "react";
+import React, { useRef } from "react";
 import { HiDownload } from "react-icons/hi";
 import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 const Blog = () => {
-  const handleDownloadPdf = () => {
-    const pdfDoc = new jsPDF();
+  const componentRef = useRef(null);
+  // const handleDownloadPdf = () => {
+  //   const pdfDoc = new jsPDF();
+  //   const pageContent = document.getElementById("page-content");
+  //   pdfDoc.text(pageContent, 10, 10);
 
-    pdfDoc.text("Hello, world!", 10, 10);
+  //   pdfDoc.save("hello_world.pdf");
+  // };
+  const handleDownloadPdf = async () => {
+    const pdfDoc = new jsPDF("p", "mm", "a4");
+    const component = componentRef.current;
+    html2canvas(component).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
 
-    pdfDoc.save("hello_world.pdf");
+      // Add the screenshot to the PDF
+      pdfDoc.addImage(imgData, "PNG", 10, 10, 180, 0);
+
+      // Save the PDF
+      pdfDoc.save("Blog.pdf");
+    });
   };
+
   return (
     <div className="my-container  border">
       <div className="flex justify-center my-6">
@@ -18,7 +34,7 @@ const Blog = () => {
         </Button>
       </div>
 
-      <div className="text-white">
+      <div ref={componentRef} className="text-white">
         <h1 className="text-center text-black text-4xl font-bold">
           Answer Some Question:-
         </h1>

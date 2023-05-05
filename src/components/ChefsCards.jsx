@@ -23,7 +23,7 @@ const ChefsCards = ({ chef }) => {
               <img
                 className="mb-3 h-40 rounded w-52 shadow pt-6"
                 src={chef_picture}
-                alt="Bonnie image"
+                alt=""
               />
             </LazyLoad>
             <h5 className="mb-1 text-xl font-medium text-white dark:text-white">

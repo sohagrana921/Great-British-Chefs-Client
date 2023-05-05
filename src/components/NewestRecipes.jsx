@@ -1,4 +1,4 @@
-import { Button, Card, Modal } from "flowbite-react";
+import { Avatar, Button, Card, Modal, Tooltip } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
@@ -42,7 +42,10 @@ const NewestRecipes = () => {
       <div className="md:grid grid-cols-3 gap-5 my-container">
         {latest.map((singleRecipe) => (
           <Card key={singleRecipe.id}>
-            <img className="h-60" src={singleRecipe.recipe_picture} alt="" />
+            <Tooltip content={singleRecipe.recipe_name}>
+              <img className="h-60" src={singleRecipe.recipe_picture} alt="" />
+            </Tooltip>
+            {/* <img className="h-60" src={singleRecipe.recipe_picture} alt="" /> */}
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {singleRecipe.recipe_name}
             </h5>

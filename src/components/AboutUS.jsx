@@ -5,12 +5,12 @@ const AboutUS = () => {
   return (
     <div>
       <div className="flex  items-center my-container">
-        <h1 className="text-center mx-auto rounded text-white text-4xl my-5 py-3 px-5 bg-blue-600 w-3/5 font-bold ">
+        <h1 className="text-center mx-auto rounded text-white text-4xl my-5 py-3 px-5 bg-blue-600 md:w-3/5 font-bold ">
           Our Mission and Vision
         </h1>
       </div>
 
-      <div className="flex gap-5 my-container">
+      <div className="md:flex gap-5 my-container">
         <div>
           <h1 className="text-3xl font-semibold text-center my-3">
             Who we are

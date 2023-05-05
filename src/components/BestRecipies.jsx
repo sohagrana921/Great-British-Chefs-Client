@@ -20,6 +20,7 @@ const BestRecipies = () => {
       </div>
     );
   }
+
   return (
     <div className="my-container">
       <h1 className="text-center mx-auto rounded text-white text-4xl my-5 py-3 px-5 bg-blue-600 w-3/5 font-bold ">
@@ -27,7 +28,7 @@ const BestRecipies = () => {
       </h1>
       <div className="md:grid grid-cols-3 gap-4">
         {bestRecipes.map((bestRecipe) => (
-          <Card>
+          <Card key={bestRecipe.id}>
             <LazyLoad>
               <img
                 className="h-52 w-full rounded"
