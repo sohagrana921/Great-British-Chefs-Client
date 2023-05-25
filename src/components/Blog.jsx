@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { HiDownload } from "react-icons/hi";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import { Link } from "react-router-dom";
 const Blog = () => {
   const componentRef = useRef(null);
   // const handleDownloadPdf = () => {
@@ -36,7 +37,9 @@ const Blog = () => {
 
       <div ref={componentRef} className="text-white">
         <h1 className="text-center text-black text-4xl font-bold">
-          Answer Some Question:-
+          <Link to="https://github.com/sohagrana921">
+            Answer Some Question:-
+          </Link>
         </h1>
         <div className=" mt-12 p-10 bg-pink-950 rounded-lg">
           <h3 className="text-2xl font-bold">
@@ -51,7 +54,7 @@ const Blog = () => {
               when the user interacts with the component, the application
               updates its internal state to reflect the user's input. The
               component then re-renders with the updated state. <br />
-              <br /> In contrast, uncontrolled components are those where the
+              <br /> In contrast, is uncontrolled components are those where the
               state is managed internally by the component. In this case, when
               the user interacts with the component, the component updates its
               own internal state without notifying the application. The
